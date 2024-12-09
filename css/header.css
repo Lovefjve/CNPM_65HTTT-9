@@ -7,9 +7,11 @@
 		background-color: #8FAADC;
 		padding: 15px 0 5px 0 ;
 		border-bottom: 3px solid #e1e1e1;
-
 	}
-
+	.header .group {
+		max-width: 1205px;
+		margin: 0 auto;
+	}
 	/* Logo */
 		.header .logo {
 			width: 250px;
