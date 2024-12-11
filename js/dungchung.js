@@ -223,12 +223,10 @@ function logIn(form) {
 }
 
 function signUp(form) {
-    var ho = form.ho.value;
-    var ten = form.ten.value;
     var email = form.email.value;
-    var username = form.newUser.value;
+    var username = form.email.value;
     var pass = form.newPass.value;
-    var newUser = new User(username, pass, ho, ten, email);
+    var newUser = new User(username, pass, email);
 
     // Lấy dữ liệu các khách hàng hiện có
     var listUser = getListUser();
@@ -635,21 +633,6 @@ function addContainTaiKhoan() {
 
                     <form onsubmit="return signUp(this);">
 
-                        <div class="top-row">
-                            <div class="field-wrap">
-                                <label>
-                                    Họ<span class="req">*</span>
-                                </label>
-                                <input name="ho" type="text" required autocomplete="off" />
-                            </div>
-
-                            <div class="field-wrap">
-                                <label>
-                                    Tên<span class="req">*</span>
-                                </label>
-                                <input name="ten" type="text" required autocomplete="off" />
-                            </div>
-                        </div> <!-- / ho ten -->
 
                         <div class="field-wrap">
                             <label>
@@ -657,14 +640,6 @@ function addContainTaiKhoan() {
                             </label>
                             <input name="email" type="email" required autocomplete="off" />
                         </div> <!-- /email -->
-
-                        <div class="field-wrap">
-                            <label>
-                                Tên đăng nhập<span class="req">*</span>
-                            </label>
-                            <input name="newUser" type="text" required autocomplete="off" />
-                        </div> <!-- /user name -->
-
                         <div class="field-wrap">
                             <label>
                                 Mật khẩu<span class="req">*</span>
