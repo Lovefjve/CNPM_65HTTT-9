@@ -224,9 +224,10 @@ function logIn(form) {
 
 function signUp(form) {
     var email = form.email.value;
+    var phone = form.phone.value;
     var username = form.email.value;
     var pass = form.newPass.value;
-    var newUser = new User(username, pass, email);
+    var newUser = new User(username, pass, email, phone);
 
     // Lấy dữ liệu các khách hàng hiện có
     var listUser = getListUser();
@@ -545,7 +546,6 @@ function addHeader() {
                         <div class="member">
                             <a onclick="checkTaiKhoan()">
                                 <i class="fa fa-user"></i>
-                                Tài khoản
                             </a>
                             <div class="menuMember hide">
                                 <a href="nguoidung.html">Trang người dùng</a>
@@ -640,6 +640,12 @@ function addContainTaiKhoan() {
                             </label>
                             <input name="email" type="email" required autocomplete="off" />
                         </div> <!-- /email -->
+                        <div class="field-wrap">
+                            <label>
+                                Số điện thoại<span class="req">*</span>
+                            </label>
+                            <input name="phone" type="text" required autocomplete="off" />
+                        </div> <!-- /phone -->
                         <div class="field-wrap">
                             <label>
                                 Mật khẩu<span class="req">*</span>

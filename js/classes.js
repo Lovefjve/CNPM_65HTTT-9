@@ -2,7 +2,7 @@ function User(username, pass, email, phone, products, donhang) {
 	this.username = username;
 	this.pass = pass;
 	this.email = email || '';
-	this.phont = phone;
+	this.phone = phone;
 	this.products = products || [];
 	this.donhang = donhang || [];
 }
