@@ -223,12 +223,11 @@ function logIn(form) {
 }
 
 function signUp(form) {
-    var ho = form.ho.value;
-    var ten = form.ten.value;
     var email = form.email.value;
-    var username = form.newUser.value;
+    var phone = form.phone.value;
+    var username = form.email.value;
     var pass = form.newPass.value;
-    var newUser = new User(username, pass, ho, ten, email);
+    var newUser = new User(username, pass, email, phone);
 
     // Lấy dữ liệu các khách hàng hiện có
     var listUser = getListUser();
@@ -523,7 +522,7 @@ function addHeader() {
             <div class="group">
                 <div class="logo">
                     <a href="index.html">
-                        <img src="img/logo.jpg" alt="Trang chủ Smartphone Store" title="Trang chủ Smartphone Store">
+                        <img src="img/logo.png" alt="Trang chủ Smartphone Store" title="Trang chủ Smartphone Store">
                     </a>
                 </div> <!-- End Logo -->
 
@@ -547,7 +546,6 @@ function addHeader() {
                         <div class="member">
                             <a onclick="checkTaiKhoan()">
                                 <i class="fa fa-user"></i>
-                                Tài khoản
                             </a>
                             <div class="menuMember hide">
                                 <a href="nguoidung.html">Trang người dùng</a>
@@ -585,8 +583,7 @@ function addFooter() {
 
     <!-- ============== Footer ============= -->
     <div class="copy-right">
-        <p><a href="index.html">LDD Phone Store</a> - All rights reserved © 2021 - Designed by
-            <span style="color: #eee; font-weight: bold">group 15th</span></p>
+
     </div>`);
 }
 
@@ -604,13 +601,13 @@ function addContainTaiKhoan() {
 
             <div class="tab-content">
                 <div id="login">
-                    <h1>Chào mừng bạn trở lại!</h1>
+                    <h1></h1>
 
                     <form onsubmit="return logIn(this);">
 
                         <div class="field-wrap">
                             <label>
-                                Tên đăng nhập<span class="req">*</span>
+                                Email/Số điện thoại<span class="req">*</span>
                             </label>
                             <input name='username' type="text" required autocomplete="off" />
                         </div> <!-- /user name -->
@@ -624,32 +621,17 @@ function addContainTaiKhoan() {
 
                         <p class="forgot"><a href="#">Quên mật khẩu?</a></p>
 
-                        <button type="submit" class="button button-block" />Tiếp tục</button>
+                        <button type="submit" class="button button-block" />ĐĂNG NHẬP</button>
 
                     </form> <!-- /form -->
 
                 </div> <!-- /log in -->
 
                 <div id="signup">
-                    <h1>Đăng kí miễn phí</h1>
+                    <h1></h1>
 
                     <form onsubmit="return signUp(this);">
 
-                        <div class="top-row">
-                            <div class="field-wrap">
-                                <label>
-                                    Họ<span class="req">*</span>
-                                </label>
-                                <input name="ho" type="text" required autocomplete="off" />
-                            </div>
-
-                            <div class="field-wrap">
-                                <label>
-                                    Tên<span class="req">*</span>
-                                </label>
-                                <input name="ten" type="text" required autocomplete="off" />
-                            </div>
-                        </div> <!-- / ho ten -->
 
                         <div class="field-wrap">
                             <label>
@@ -657,22 +639,25 @@ function addContainTaiKhoan() {
                             </label>
                             <input name="email" type="email" required autocomplete="off" />
                         </div> <!-- /email -->
-
                         <div class="field-wrap">
                             <label>
-                                Tên đăng nhập<span class="req">*</span>
+                                Số điện thoại<span class="req">*</span>
                             </label>
-                            <input name="newUser" type="text" required autocomplete="off" />
-                        </div> <!-- /user name -->
-
+                            <input name="phone" type="text" required autocomplete="off" />
+                        </div> <!-- /phone -->
                         <div class="field-wrap">
                             <label>
                                 Mật khẩu<span class="req">*</span>
                             </label>
                             <input name="newPass" type="password" required autocomplete="off" />
                         </div> <!-- /pass -->
-
-                        <button type="submit" class="button button-block" />Tạo tài khoản</button>
+                        <div class="field-wrap">
+                            <label>
+                                Nhập lại mật khẩu<span class="req">*</span>
+                            </label>
+                            <input name="checkPass" type="password" required autocomplete="off" />
+                        </div> <!-- /checkpass -->
+                        <button type="submit" class="button button-block" />ĐĂNG KÝ</button>
 
                     </form> <!-- /form -->
 
