@@ -1,14 +1,5 @@
 window.onload = function () {
 	khoiTao();
-
-	// Thêm hình vào banner
-	addBanner("img/banners/banner0.gif", "img/banners/banner0.gif");
-	var numBanner = 9; // Số lượng hình banner
-	for (var i = 1; i <= numBanner; i++) {
-		var linkimg = "img/banners/banner" + i + ".png";
-		addBanner(linkimg, linkimg);
-	}
-
 	// Khởi động thư viện hỗ trợ banner - chỉ chạy khi đã tạo hình trong banner
 	var owl = $('.owl-carousel');
 	owl.owlCarousel({
@@ -50,13 +41,10 @@ window.onload = function () {
 		var green = ['#5de272', '#007012'];
 
 		// Thêm các khung sản phẩm
-		var div = document.getElementsByClassName('contain-khungSanPham')[0];
-		addKhungSanPham('NỔI BẬT NHẤT', yellow_red, ['star=3', 'sort=rateCount-decrease'], soLuong, div);
-		addKhungSanPham('SẢN PHẨM MỚI', blue, ['promo=moiramat', 'sort=rateCount-decrease'], soLuong, div);
-		addKhungSanPham('TRẢ GÓP 0%', yellow_red, ['promo=tragop', 'sort=rateCount-decrease'], soLuong, div);
-		addKhungSanPham('GIÁ SỐC ONLINE', green, ['promo=giareonline', 'sort=rateCount-decrease'], soLuong, div);
-		addKhungSanPham('GIẢM GIÁ LỚN', yellow_red, ['promo=giamgia'], soLuong, div);
-		addKhungSanPham('GIÁ RẺ CHO MỌI NHÀ', green, ['price=0-3000000', 'sort=price'], soLuong, div);
+		var div = document.getElementsByClassName('contain-khungSanPham')[0];		
+		addKhungSanPham('Sản phẩm bán chạy', yellow_red, ['star=5', 'sort=rateCount-decrease'], soLuong, div);
+
+		addKhungSanPham('Danh sách sản phẩm', blue, ['promo=moiramat', 'sort=rateCount-decrease'], soLuong, div);
 	}
 
 	// Thêm chọn mức giá
@@ -232,7 +220,7 @@ function addKhungSanPham(tenKhung, color, filter, len, ele) {
 
 	// mở tag
 	var s = `<div class="khungSanPham" style="` + borderColor + `">
-				<h3 class="tenKhung" style="` + gradient + `">* ` + tenKhung + ` *</h3>
+				<h3 class="tenKhung" style="` + gradient + `"> ` + tenKhung + ` </h3>
 				<div class="listSpTrongKhung flexContain">`;
 
 	// thêm các <li> (sản phẩm) vào tag
@@ -254,6 +242,7 @@ function addKhungSanPham(tenKhung, color, filter, len, ele) {
 	// thêm khung vào contain-khung
 	ele.innerHTML += s;
 }
+// Thêm sản phẩm vào các khung sản phẩm
 
 // Nút phân trang
 function themNutPhanTrang(soTrang, trangHienTai) {
@@ -566,13 +555,13 @@ function filterProductsStar(num) {
 
 // Thêm banner
 function addBanner(img, link) {
-	var newDiv = `<div class='item'>
-						<a target='_blank' href=` + link + `>
-							<img src=` + img + `>
-						</a>
-					</div>`;
-	var banner = document.getElementsByClassName('owl-carousel')[0];
-	banner.innerHTML += newDiv;
+	// var newDiv = `<div class='item'>
+	// 					<a target='_blank' href=` + link + `>
+	// 						<img src=` + img + `>
+	// 					</a>
+	// 				</div>`;
+	// var banner = document.getElementsByClassName('owl-carousel')[0];
+	// banner.innerHTML += newDiv;
 }
 
 // Thêm hãng sản xuất
