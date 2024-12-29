@@ -136,7 +136,7 @@ function themVaoGioHang(masp, tensp) {
             "date": t
         });
     }   
-    if (daCoSanPham) { // nếu không trùng thì mới thêm sản phẩm vào user.products
+    if (daCoSanPham) { // kiểm tra sản phẩm đã có trong giỏ hàng thì không thêm vào nữa
         alert('Sản phẩm đã có trong giỏ hàng !');
     }
     else{
